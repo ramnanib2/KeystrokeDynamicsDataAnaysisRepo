@@ -28,7 +28,7 @@ def dataFromLabel(category):
             metadata: numpy array of shape (number_of_examples,2). stores turnId and username in the 0th and the 1st column respectively """
     
     try:
-        con = mdb.connect(host="PL09-McKinley",port=3310,user="Bhushan",passwd="changeme",db="bhushan")
+        con = mdb.connect(host="PL09-McKinley",port=3310)
         cur = con.cursor()
         cur.execute("CALL sp_generateData_VirtualKeystrokes_GNB('"+category+"')")
         rows = cur.fetchall()
